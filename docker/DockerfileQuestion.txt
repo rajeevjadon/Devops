@@ -1,0 +1,23 @@
+what is Dsockerfile
+-Dockerfiel is a Set of Instruction.
+-Dockerfile can build images automatically by treadingb the instructions from a Deockerfilke.
+-A Dockerfile is a simple text document that contains all the commands .
+-This page describes the commands you can use in a Dockerfile.
+
+ADD - Add local or remote files and directories.
+CMD -Specify default commands.
+COPY - Copy files and directories.
+ENTRYPOINT -  Specify default executables
+EXPOSE  - Describes which ports your application is listing on.
+FROM  - Create a new build stages 
+ARG - Arguments 
+RUN  - Executes the Builds Commands 
+VOLUME  - CreateVolumes mount.  
+WORKDIR  -  Change the working dirtectory 
+USER - Set user and group ID.
+ENV -  Set environments variables 
+
+
+
+
+
