@@ -1,0 +1,90 @@
+What is terraform module .
+
+  Terraform  modules is use for the code resuability,code mainatibility.
+  It helps organize, standardize and reuse infrastructure code across multiple environmentrs like dev, test, and propduction .
+
+----------------------------------------------------------------------------------------------
+
+what is Terraform state and terraform file.
+TerraformState File - Terraform state file is a critical part of how terrraform operates.It keeps 
+track of the infrastructure resources created annnd mannaged by Terraform.
+
+
+Terraform files  defines what you want to create, while the state file tracks what has already been created.
+
+Terraforem File(.tf)                                                Terraform State File(.tfstate file)
+1-infrastructure configuration written by the user            1-Stores the actual infrastructure details created by Terraform 
+2-Defines the Desired State                                     2-Stores the Current State\
+3-Editable By the USer                                              3- Automatically generated and managed by the Terraform 
+4-i.e main.tf, variable.tf                                            4-  terraform.tfstate 
+
+
+----------------------------------------------------------------------------------------------------
+
+why we need the  terraform 
+ Terraform is an open-source Infrastructure as Code(IAC) tool which is used to provision and manage cloud infrastructure using the configuration 
+ file.
+ It allows to automate, version, and consistently deploy resources accross teraform like Azure, AWS and GCP cloud. 
+
+ ----------------------------------------------------------------------------------------------------
+
+how do you handle the secrets in terraform 
+Secrets in Terraform are sensitive values like passwords and API keys that should never be hardcoded in configuration files .
+They should be managed securely using environments variables, secrets managers(like key vault or Secrets Manager), annd protected remote state storage.  
+
+
+--------------------------------------------------------------------------------------------------
+
+how  do you  handle explicit dependency in terraform 
+Explicit dependency is used to define the dependency using the depends_on to control resource creation using  before another when automatic depennddenncy detection is not sufficient .
+
+implicit dependency works automatically at the attribute/reference level when one resource references another.
+Explicit  Dependency is manually defined at the resource or module block lavel using the depends-on arguments.
+depends_on is a Terraform meta-argument used to define explicit depenndencies bnetwen resources.
+
+---------------------------------------------------------------------------------------------------
+
+what is terraform  resource  graph 
+Terraform Resource Graph is Dependency Graph that determines the correct order of resource creation and destruction based on their relatonship.
+
+
+--------------------------------------------------------------------------------------------------
+
+what is terraform refresh 
+Terraform refresh updates the Terraform state file to match the current real world innfrastructure.
+It checks the actual infrastructure and synchronizes file acordingly.
+
+
+
+-----------------------------------------------------------------------------------------------
+
+what is the null resource in terraform
+A null resources is a special Terraform resources that does not create any real infrastructure but is used to execute scripts or provisioners.
+It is commonly used for running commands, scripts, or handling custom automation tasks.
+
+resource "null_resources"   "example"  {
+  provisioner  "local-exec" {
+    commands = "echo Hello Devops"
+  }
+}
+
+>No cloud resources is created 
+>Only a local commannd is executed.
+
+----------------------------------------------------------------------------------------------------
+
+Someone deleted resources manuallyt in portal them how can you recover  that through teraform  ?
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
+Explain Terraofrm workspace.
+Terraform workspace is used to manage multiple environment with the same configuration by seperating state file .
+
+
+
+
+---------------------------------------------------------------------------------------------------
