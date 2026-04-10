@@ -4,6 +4,14 @@ module "resource_group" {
   location = var.location
 }
 
+
+#This is the Simran RG
+module "resource_group" {
+  source   = "../../modules/resource_group"
+  rg_name  = "simranRG"
+  location = var.location
+}
+
 module "network" {
   source     = "../../modules/network"
   depends_on = [module.resource_group]
