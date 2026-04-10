@@ -5,6 +5,15 @@ module "resource_group" {
 }
 
 
+
+#This is the Simran RG
+module "bhagat_group" {
+  source   = "../../modules/resource_group"
+  rg_name  = "bhagarRG"
+  location = var.location
+}
+
+
 module "network" {
   source     = "../../modules/network"
   depends_on = [module.resource_group]
